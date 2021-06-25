@@ -4,6 +4,10 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/mysqlDB?
+    url: jdbc:mysql://localhost:3306/mysqlDB
     username: root
     password: 5943
+
+mybatis:
+  type-aliases-package: com.bigin.api.advertiser
+  mapper-locations: mybatis/mapper/*.xml
