@@ -39,14 +39,14 @@
 
     <select id="updateShopData" parameterType="SDRegisterUpdateRequest">
         UPDATE SHOPDATA
-        SET PRDT_CODE = #{prdtCode}
-        <if test='prdtPriceUpdateYn != null and prdtPriceUpdateYn = "Y"'>
+        SET ARTDATE = now()
+        <if test='prdtPriceUpdateYn != null and prdtPriceUpdateYn.equals("Y")'>
             ,PRDT_PRICE = #{prdtPrice}
         </if>
-        <if test='prdtImgUpdateYn != null and prdtImgUpdateYn = "Y"'>
+        <if test='prdtImgUpdateYn != null and prdtImgUpdateYn.equals("Y")'>
             ,PRDT_IMG = #{prdtImg}
         </if>
-        <if test='prdtUrlUpdateYn != null and prdtUrlUpdateYn = "Y"'>
+        <if test='prdtUrlUpdateYn != null and prdtUrlUpdateYn.equals("Y")'>
             ,PRDT_URL = #{prdtUrl}
         </if>
         where ADVER_ID = #{adverId} AND PRDT_CODE = #{prdtCode}
