@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.bigin.api.advertiser.repository.DataMapper">
+<mapper namespace="com.bigin.api.advertiser.repository.DataResisterReository">
     <select id="insertData" parameterType="SDRegisterRequest">
-        INTSERT INTO SHOPDATA(
+        INSERT INTO SHOPDATA(
         ADVER_ID,
         PRDT_CODE,
         PRDT_PRICE,
         PRDT_IMG,
         PRDT_URL,
-        REGDATE,
-        ARTDATE
+        REGDATE
         )
         VALUES (
         #{adverId},
@@ -17,8 +16,7 @@
         #{prdtPrice},
         #{prdtImg},
         #{prdtUrl},
-        now(),
-        #{artDate}
+        now()
         )
     </select>
 </mapper>
