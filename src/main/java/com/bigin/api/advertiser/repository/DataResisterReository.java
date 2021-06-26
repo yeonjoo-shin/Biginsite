@@ -4,6 +4,9 @@ import com.bigin.api.advertiser.core.SDRegisterRequest;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+import java.util.Map;
+
 /**
  * create on2021/06/25
  * crud API
@@ -15,7 +18,13 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface DataResisterReository {
     /**
-     *    상품 데이터 등록.
+     *  상품 데이터 등록.
      */
     void insertData(SDRegisterRequest params);
+
+    /**
+     *  상품 데이터 조회
+     */
+
+    List<SDRegisterRequest> findShopData(Map<String,String> param);
 }
