@@ -32,7 +32,7 @@ public class ResisterController {
     private final String strResultSuccess   = "Success";
 
 
-    @PostMapping(name = "상품 등록" , value = "/shopdata" , produces = "application/json")
+    @PostMapping(name = "상품 등록" , value = "/shopdata/insert" , produces = "application/json")
     public @ResponseBody Object setShopdataRegister(@RequestBody SDRegisterRequest params) {
 
         Map<String,Object> data = new HashMap<>();
