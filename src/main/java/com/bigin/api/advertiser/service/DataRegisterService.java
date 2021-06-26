@@ -1,6 +1,7 @@
 package com.bigin.api.advertiser.service;
 
 import com.bigin.api.advertiser.core.SDRegisterRequest;
+import com.bigin.api.advertiser.core.SDRegisterUpdateRequest;
 import com.bigin.api.advertiser.repository.DataResisterReository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -44,7 +45,7 @@ public class DataRegisterService {
     /**
      * 상품 데이터 수정.
      */
-    public void updateShopData(Map<String,String> param) {
-        reository.updateShopData(param);
+    public void updateShopData(SDRegisterUpdateRequest request) {
+        reository.updateShopData(request);
     }
 }

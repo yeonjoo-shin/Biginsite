@@ -1,6 +1,7 @@
 package com.bigin.api.advertiser.repository;
 
 import com.bigin.api.advertiser.core.SDRegisterRequest;
+import com.bigin.api.advertiser.core.SDRegisterUpdateRequest;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
@@ -36,5 +37,5 @@ public interface DataResisterReository {
     /**
      * 상품 데이터 수정.
      */
-    void updateShopData(Map<String,String> param);
+    void updateShopData(SDRegisterUpdateRequest request);
 }

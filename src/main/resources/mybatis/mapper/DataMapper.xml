@@ -37,7 +37,19 @@
         WHERE ADVER_ID = #{adverId} AND PRDT_CODE = #{prdtCode}
     </select>
 
-    <select id="updateShopData" parameterType="hashMap">
+    <select id="updateShopData" parameterType="SDRegisterUpdateRequest">
+        UPDATE SHOPDATA
+        SET PRDT_CODE = #{prdtCode}
+        <if test='prdtPriceUpdateYn != null and prdtPriceUpdateYn = "Y"'>
+            ,PRDT_PRICE = #{prdtPrice}
+        </if>
+        <if test='prdtImgUpdateYn != null and prdtImgUpdateYn = "Y"'>
+            ,PRDT_IMG = #{prdtImg}
+        </if>
+        <if test='prdtUrlUpdateYn != null and prdtUrlUpdateYn = "Y"'>
+            ,PRDT_URL = #{prdtUrl}
+        </if>
+        where ADVER_ID = #{adverId} AND PRDT_CODE = #{prdtCode}
 
     </select>
 </mapper>

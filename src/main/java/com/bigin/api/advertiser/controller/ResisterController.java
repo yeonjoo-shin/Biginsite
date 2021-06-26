@@ -1,6 +1,7 @@
 package com.bigin.api.advertiser.controller;
 
 import com.bigin.api.advertiser.core.SDRegisterRequest;
+import com.bigin.api.advertiser.core.SDRegisterUpdateRequest;
 import com.bigin.api.advertiser.service.DataRegisterService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -117,19 +118,14 @@ public class ResisterController {
 
     }
 
-    @PutMapping(name = "상품 수정" , value = "/shopData/update/{adverId}/{prdtCode}",produces = "application/json")
-    public @ResponseBody Object updateShopData(@PathVariable String adverId
-                                              ,@PathVariable String prdtCode) {
+    @PutMapping(name = "상품 수정" , value = "/shopData/update",produces = "application/json")
+    public @ResponseBody Object updateShopData(@RequestBody SDRegisterUpdateRequest request) {
 
         Map<String,Object> data = new HashMap<>();
 
         String strFailure           = "Failure";
         try {
-            Map<String,String> param = new HashMap<>();
-            param.put("adverId", adverId);
-            param.put("prdtCode", prdtCode);
-
-            registerService.updateShopData(param);
+            registerService.updateShopData(request);
 
             data.put(resultMsg,    strResultSuccess);
 
