@@ -22,13 +22,22 @@
 
     <select id="findShopData" resultType="SDRegisterRequest" parameterType="hashMap">
         SELECT ADVER_ID AS adverId
-        ,PRDT_CODE AS prdtCode
-        ,PRDT_PRICE AS prdtPrice
-        ,PRDT_IMG AS prdtImg
-        ,PRDT_URL AS prdtUrl
-        ,REGDATE AS regDate
-        ,ARTDATe AS artDate
+              ,PRDT_CODE AS prdtCode
+              ,PRDT_PRICE AS prdtPrice
+              ,PRDT_IMG AS prdtImg
+              ,PRDT_URL AS prdtUrl
+              ,REGDATE AS regDate
+              ,ARTDATe AS artDate
         FROM SHOPDATA
         WHERE ADVER_ID = #{adverId} AND PRDT_CODE = #{prdtCode}
+    </select>
+
+    <select id="delShopData" parameterType="hashMap">
+        DELETE FROM SHOPDATA
+        WHERE ADVER_ID = #{adverId} AND PRDT_CODE = #{prdtCode}
+    </select>
+
+    <select id="updateShopData" parameterType="hashMap">
+
     </select>
 </mapper>

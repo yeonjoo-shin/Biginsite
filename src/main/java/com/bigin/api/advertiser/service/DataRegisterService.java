@@ -31,8 +31,20 @@ public class DataRegisterService {
      *  상품 데이터 조회.
      */
     public List<SDRegisterRequest> findShopData(Map<String,String> param) {
-        List<SDRegisterRequest> resl = reository.findShopData(param);
-        log.info("이겨머{}",resl);
-        return  resl;
+        return  reository.findShopData(param);
+    }
+
+    /**
+     *  상품 데이터 삭제.
+     */
+    public void delShopData(Map<String,String> param) {
+        reository.delShopData(param);
+    }
+
+    /**
+     * 상품 데이터 수정.
+     */
+    public void updateShopData(Map<String,String> param) {
+        reository.updateShopData(param);
     }
 }

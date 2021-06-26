@@ -27,4 +27,14 @@ public interface DataResisterReository {
      */
 
     List<SDRegisterRequest> findShopData(Map<String,String> param);
+
+    /**
+     * 상품 데이터 삭제.
+     */
+    void delShopData(Map<String,String> param);
+
+    /**
+     * 상품 데이터 수정.
+     */
+    void updateShopData(Map<String,String> param);
 }
