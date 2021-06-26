@@ -22,7 +22,7 @@ import java.util.Map;
 @Slf4j
 @RestController
 @AllArgsConstructor
-@RequestMapping(value = "/advertiser")
+@RequestMapping(value = "/ad")
 public class ResisterController {
 
     private DataRegisterService registerService;
@@ -93,7 +93,7 @@ public class ResisterController {
      * @param prdtCode
      * @return
      */
-    @DeleteMapping(name = "상품 삭제", value = "/shopData/del/{adverId}/{prdtCode}",produces = "application/json")
+    @DeleteMapping(name = "상품 삭제", value = "/shopdata/del/{adverId}/{prdtCode}",produces = "application/json")
     public @ResponseBody Object delShopData(@PathVariable String adverId
                                            ,@PathVariable String prdtCode) {
 
@@ -118,7 +118,7 @@ public class ResisterController {
 
     }
 
-    @PutMapping(name = "상품 수정" , value = "/shopData/update",produces = "application/json")
+    @PutMapping(name = "상품 수정" , value = "/shopdata/update",produces = "application/json")
     public @ResponseBody Object updateShopData(@RequestBody SDRegisterUpdateRequest request) {
 
         Map<String,Object> data = new HashMap<>();
