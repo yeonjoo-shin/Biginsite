@@ -27,7 +27,6 @@ public class ResisterController {
 
     private DataRegisterService registerService;
 
-    private final String resultVal          = "resultVal";
     private final String resultMsg          = "resultMsg";
     private final String strResultFail      = "Fail";
     private final String strResultSuccess   = "Success";
@@ -40,7 +39,7 @@ public class ResisterController {
      * @return
      */
     @PostMapping(name = "상품 등록" , value = "/shopdata/insert" , produces = "application/json")
-    public @ResponseBody Object setShopdataRegister(@RequestBody SDRegisterRequest params) {
+    public @ResponseBody Object insertShopdata(@RequestBody SDRegisterRequest params) {
 
         Map<String,Object> data = new HashMap<>();
 
