@@ -12,7 +12,6 @@ import java.util.Map;
 
 @Slf4j
 @Service
-@Component
 public class DataRegisterService {
 
     private final DataResisterReository reository;
